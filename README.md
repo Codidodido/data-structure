@@ -34,4 +34,28 @@ struct Node{
 
 As you see, I created a structure which name is **Node**. This node has two properties which are an int data and a pointer to next node. This pointer conect nodes like a chain which we name it linked list.
 
-Furture more, you can check linked list project.
+# Graph
+
+Do you ever think about train lines, airplane lines, or even road lines ? Do you ever think about connection between peoples in our world or social medias? Have you ever mind how could GPS programs find closest way to your destination ? All are **graph**.
+
+In simple language, graph is collection of points which are linked together by lines. We call these points vertices and these lines edges. 
+
+There are many theoretical and mathematical things about graph which are not our goal in this article. We will learn how to create a graph and use it.
+
+#### Basic Knowledge:
+- Graph has vertices which are linked together by edges.
+- Each edge has a weight, which can be destination, or power, or any relation between vertices.
+- Vertices which are not connected call as isolated vertex .
+- Path is collection of edges which are start from a vertex and end to any vertex.
+- Cycle is collection of edges which are start from a vertex and end to it.
+- Maximum outgoing edges from a vertex is -> vertices - 1
+- Maximum edges of a graph is -> ((vertices)*(vertices-1))/2
+
+
+### How to create a graph ?
+
+There is two famous way to make graph: 
+
+- Matrix
+- Adjency List
+
