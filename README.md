@@ -59,3 +59,30 @@ There is two famous way to make graph:
 - Matrix
 - Adjency List
 
+#### Matrix:
+
+We can Imagine a graph like a square matrix. Each row and column belong to a vertex. Edges start from a vertex and end to another vertex, with a speceif weight. So we can display it with matrix like : 
+
+  a b c d
+a 0 0 1 5
+b 0 0 0 0
+c 1 0 0 7
+d 5 0 7 0
+
+This is a graph with 4 vertices. Vertex 'a' is connected to 'c' and 'd' and. Vertex 'c' also connected to 'a' and 'd'. Vertext 'd' is connected to 'a' and 'c'. Also, each edge has its specefic weight . For example 'a'->'d' is 1 and 'd'->'c' is 7.
+
+We can create it with 2D array.
+
+```cpp
+// v = vertices , e = edges
+int v,e;
+float graph[v][v];
+// s = source, d = destination, w = weight
+int s,d,w;
+for(int i = 0; i < e; i++){
+    cin >> s;
+    cin >> d;
+    cin >> w;
+    graph[s][d] = w;
+}
+```
