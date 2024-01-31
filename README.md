@@ -6,6 +6,7 @@ Learning data structure together
 - Graph
 - Sort
 - Tree
+- TODO
 
 # Linked List
 
@@ -86,3 +87,9 @@ for(int i = 0; i < e; i++){
     graph[s][d] = w;
 }
 ```
+
+# TODO
+- Add adjency tutorial
+- Add tree tutorial
+- Add sort tutorial
+- Add merge sort
