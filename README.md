@@ -140,8 +140,30 @@ class Graph{
     }
 }
 ```
+
+### Pay Attention ... !!!!!
+
+There are two types of edges: one-way and two-way. One-way edges connect the source to the destination, while two-way edges connect both . We can compare them to having a two-lane road or a one-way road between two crossroads.
+
+So we could rewrite our graph class like:
+
+```cpp
+// Replace AddOneWayEdge instead of AddEdge method
+void AddOneWayEdge(int s, int d, int w){
+    Node* S = new Node;
+    S->info = s;
+    S->weight = w;
+    S->next = edgesList[d]->head;
+    edgesList[d]->head = S;
+}
+
+// Create AddTwoWayEdge method to connect both source and destination to each other
+void AddTwoWayEdge(int s, int d, int w){
+    AddOneWayEdge(s,d,w); // Connect source to destination
+    AddOneWayEdge(d,s,w); // Connect destination to source
+}
+```
 # TODO
-- Add adjency tutorial
 - Add tree tutorial
 - Add sort tutorial
 - Add merge sort
