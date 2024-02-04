@@ -85,9 +85,61 @@ for(int i = 0; i < e; i++){
     cin >> d;
     cin >> w;
     graph[s][d] = w;
+    graph[d][s] = w;
 }
 ```
+### Adjency List
 
+Adjency list is an array where each item is head of a linked list chain. To explain in simple terms, each item of adjency list represent as a vertex, which is of type **Node**. Edges would be connected by pointing to source vertex with target vertex and vice versa.
+
+Look at this example array: 
+
+[
+[A] => B -> D,
+[B] => A,
+[C] => E,
+[D] => E -> A,
+[E] => D -> C
+]
+
+```cpp
+// Implement Node
+
+struct AdjencyList{
+  Node* head;
+}
+
+class Graph{
+  private:
+    int v; // Vertices Number
+    AdjancyList* edgesList;
+  public:
+    Graph(int n){
+      v = n;
+      edgeList = new AdjancyList[v]; // Allocate memory for array of adjacency lists
+
+      for(int i = 0; i < n; i ++){
+        edgesList[i]->head = nullptr; // Initialize head pointer of each list to nullptr
+      }
+    }
+
+    void AddEdge(int s, int d, int w){
+      // Create a new node for the source vertex and connect it to the destination vertex
+      Node* S = new Node;
+      S->info = s;
+      S->weight = w;
+      S->next = edgesList[d]->head; // Connect S to the head of the destination's list
+      edgesList[d]->head = S; // Update the head of the destination's list to point to S
+
+      // Create a new node for the destination vertex and connect it to the source vertex
+      Node* D = new Node;
+      D->info = d;
+      D->weight = w;
+      D->next = edgesList[s]->head; // Connect D to the head of the source's list
+      edgesList[s]->head = D; // Update the head of the source's list to point to D
+    }
+}
+```
 # TODO
 - Add adjency tutorial
 - Add tree tutorial
